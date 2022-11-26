@@ -87,3 +87,12 @@ body {
 td {
   line-height: 40px;
 }
+
+.td-button {
+  width: 56px;
+}
+
+.buttonDelete {
+  border: none;
+  background-color: white;
+}

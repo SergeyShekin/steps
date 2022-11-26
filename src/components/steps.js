@@ -13,20 +13,24 @@ function Steps() {
         const index = data.findIndex((item) => item.listDate === newEntry.listDate);
         if (index === -1) {
             setData((prev) => [...prev, newEntry]);            
-        } else {
+        } else { 
             setData((prev) => {
                 const editData = [...prev];
-                editData[index].listDistance = editData[index].listDistance + newEntry.listDistance;
+                editData[index].listDistance += 1;
                 return editData;
-            });    
+            });        
         }
-        console.log(data);
     };
-    
+
+    const handleDelete = (id) => {
+        const result = data.filter((item) => item.id !== id);
+        setData(result);
+    };
+
     return ( 
         <div className="container">
             <Form handleForm={handleForm} />
-            <List data={data} />
+            <List data={data} handleDelete={handleDelete}/>
         </div>
      );
 }

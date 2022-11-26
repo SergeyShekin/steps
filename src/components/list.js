@@ -1,4 +1,10 @@
-function List({ data }) {
+function List({ data, handleDelete }) {
+
+    const sortedData = data.sort((a, b) => {
+        if ((a.listDate) > (b.listDate)) return 1;
+        if ((a.listDate) == (b.listDate)) return 0;
+        if ((a.listDate) < (b.listDate)) return -1;
+    });
     
     return (
         <div> 
@@ -10,11 +16,11 @@ function List({ data }) {
             <div className="table-wrapper">
                 <table className="table">
                     <tbody className="table-body">
-                        {data.map((item) => (
+                        {sortedData.map((item) => (
                             <tr key={item.id}>
                                 <td>{item.listDate}</td>
                                 <td>{item.listDistance}</td>
-                                <td><button className="buttonDelete">✘</button></td>
+                                <td className="td-button"><button className="buttonDelete" onClick={() => handleDelete(item.id)}>✘</button></td>
                             </tr>))}
                     </tbody>  
                 </table>    
