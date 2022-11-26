@@ -16,7 +16,7 @@ function Steps() {
         } else { 
             setData((prev) => {
                 const editData = [...prev];
-                editData[index].listDistance += 1;
+                editData[index].listDistance += newEntry.listDistance;
                 return editData;
             });        
         }
