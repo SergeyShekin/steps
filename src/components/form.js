@@ -22,18 +22,18 @@ function Form ({ handleForm }) {
             listDistance: Number(form.listDistance)
         };
         handleForm(workout);
-        // setForm({ date: "",  distance: "" });
+        setForm({ listDate: "",  listDistance: "" });
     };
 
     return ( 
         <form className="form" onSubmit={onSubmitFromForm}>
             <div className="input-wrapper">
                 <label className="label-date" htmlFor="listDate">Дата (ДД.ММ.ГГ)</label>
-                <input className="input-date" type="date" name="listDate" required onChange={handleChange}/>
+                <input className="input-date" type="date" name="listDate" required onChange={handleChange} value={form.listDate} />
             </div>
             <div className="input-wrapper">
                 <label className="label-number" htmlFor="listDistance">Пройдено км</label>
-                <input className="input-number" type="text" name="listDistance" required onChange={handleChange}/>
+                <input className="input-number" type="text" name="listDistance" required onChange={handleChange} value={form.listDistance} />
             </div>
             <button className="button">OK</button>
         </form>

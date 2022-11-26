@@ -2,7 +2,7 @@ function List({ data, handleDelete }) {
 
     const sortedData = data.sort((a, b) => {
         if ((a.listDate) > (b.listDate)) return 1;
-        if ((a.listDate) == (b.listDate)) return 0;
+        if ((a.listDate) === (b.listDate)) return 0;
         if ((a.listDate) < (b.listDate)) return -1;
     });
     
